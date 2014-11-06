@@ -1,0 +1,61 @@
+#:kivy 1.4
+#:import SpeffzKeyboard speffzkeyboard
+
+<RecallScreen>:
+    my_kb: my_kb
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10, 10
+        spacing: 10
+
+        Label:
+            text: 'Images Trainer'
+            halign: 'center'
+            valign: 'middle'
+            size_hint_y: 1
+
+        BoxLayout:
+            size_hint_y: 5
+
+            BoxLayout:
+                Image:
+                    source: root.current_image
+                    allow_stretch: True
+                    size_hint: .9, .9
+
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    AnchorLayout:
+                        anchor_x: 'center'
+                        anchor_y: 'center'
+                        size_hint_y: 1
+
+                        Image:
+                            source: root.result_indicator
+                            allow_stretch: True
+                            size_hint: .5, .5
+                    Label:
+                        size_hint_y: 1
+                        font_size: '%s sp' % (self.width*.1)
+                        text: root.my_pair
+
+
+        BoxLayout:
+            size_hint_y: 5
+
+            SpeffzKeyboard:
+                id: my_kb
+
+        Button:
+            text: root.current_msg
+            font_size: '%s sp' % (self.width*.03)
+            on_press: root.main_action()
+            size_hint_y: 2
+
+        Button:
+            text: 'Quit'
+            font_size: '%s sp' % (self.width*.03)
+            on_release: root.quit()
+            size_hint_y: 2

@@ -1,0 +1,96 @@
+#:kivy 1.4
+
+<EncodingScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10, 10
+        spacing: 10
+
+        Label:
+            text: 'Images Trainer'
+            halign: 'center'
+            valign: 'middle'
+            size_hint_y: 1
+
+        Label:
+            text: root.current_pair
+            font_size: '%s sp' % (self.width*.1)
+            size_hint_y: 1
+
+        GridLayout:
+            cols: 2
+            padding: 30
+            spacing: 30
+            size_hint_y: 5
+
+            Button:
+                text: '0'
+                background_color: 0,0,0,0
+                on_press: root.register_input(self)
+
+                Image:
+                    source: root.PATH_IMAGE_0
+                    allow_stretch: True
+                    pos: self.parent.pos
+                    height: self.parent.height
+                    width: self.parent.width
+
+            Button:
+                text: '1'
+                background_color: 0,0,0,0
+                on_press: root.register_input(self)
+
+                Image:
+                    source: root.PATH_IMAGE_1
+                    allow_stretch: True
+                    pos: self.parent.pos
+                    height: self.parent.height
+                    width: self.parent.width
+
+            Button:
+                text: '2'
+                background_color: 0,0,0,0
+                on_press: root.register_input(self)
+
+                Image:
+                    source: root.PATH_IMAGE_2
+                    allow_stretch: True
+                    pos: self.parent.pos
+                    height: self.parent.height
+                    width: self.parent.width
+
+            Button:
+                text: '3'
+                background_color: 0,0,0,0
+                on_press: root.register_input(self)
+
+                Image:
+                    source: root.PATH_IMAGE_3
+                    allow_stretch: True
+                    pos: self.parent.pos
+                    height: self.parent.height
+                    width: self.parent.width
+
+        BoxLayout:
+            size_hint_y: 1
+
+            Label:
+                text: root.current_result
+                font_size: '%s sp' % (self.width*.1)
+                size_hint_x: 2
+
+            Image:
+                source: root.result_indicator
+
+        Button:
+            text: root.current_msg
+            font_size: '%s sp' % (self.width*.03)
+            on_press: root.start()
+            size_hint_y: 1
+
+        Button:
+            text: 'Quit'
+            font_size: '%s sp' % (self.width*.03)
+            on_release: root.quit()
+            size_hint_y: 1

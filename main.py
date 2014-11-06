@@ -6,9 +6,9 @@ kivy.require('1.1.3')
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 
-from screens.welcomescreen import WelcomeScreen
-from screens.encodingscreen import EncodingScreen
-from screens.recallscreen import RecallScreen
+from screens.welcome.welcomescreen import WelcomeScreen
+from screens.encoding.encodingscreen import EncodingScreen
+from screens.recall.recallscreen import RecallScreen
 
 
 class ImagesApp(App):

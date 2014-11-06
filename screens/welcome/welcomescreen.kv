@@ -1,0 +1,38 @@
+#:kivy 1.4
+
+<WelcomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            font_size: '%s sp' % (self.width*.1)
+            text: "[b]Images\n[color=3333ff]Trainer[/b][/color]"
+            markup: True
+            size_hint_y: 4
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 30
+            spacing: 30
+            size_hint_y: 3
+
+            Button:
+                text: 'Encoding practice'
+                font_size: '%s sp' % (self.width*.05)
+                on_press: root.open_encoding_practice()
+
+            Button:
+                text: 'Recall practice'
+                font_size: '%s sp' % (self.width*.05)
+                on_press: root.open_recall_practice()
+
+            # Button:
+            #     text: 'Placeholder'
+            #     font_size: '%s sp' % (self.width*.05)
+            #     on_press: root.open_recall_practice()
+
+        Label:
+            text: 'Mariano Aquino - 2014'
+            size_hint_y: 3
+            padding_y: self.height*.3
+            font_size: '%s sp' % (self.width*.03)
